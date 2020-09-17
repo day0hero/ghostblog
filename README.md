@@ -6,4 +6,3 @@ This is a quick spin up of ghost CMS using kubernetes resources. Under the
 - deployment.yaml
 - service.yaml
 - pvc.yaml
-
