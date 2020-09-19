@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: ghostblog
+  name: ghost
   namespace: ghostblog
   labels:
     app: ghostblog
@@ -29,5 +29,5 @@ spec:
           name: ghostblog-volume
       volumes:
       - name: ghostblog-volume
-        presistentVolumeClaim:
+        persistentVolumeClaim:
           claimName: ghostblog-volume
