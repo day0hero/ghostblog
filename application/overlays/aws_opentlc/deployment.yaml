@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ghost
+  namespace: ghostblog
+  labels:
+    app: ghostblog
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ghostblog
+  template:
+    spec:
+      containers:
+      - name: ghost
+        image: ghost:2.6-alpine
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 2368
+        env:
+        - name: url
+          value: http://ghostblog.example.com
+      volumes:
+      - name: ghostblog-volume
+        persistentVolumeClaim:
+          claimName: ghostblog-pvc

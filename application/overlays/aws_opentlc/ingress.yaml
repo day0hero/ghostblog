@@ -1,0 +1,26 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: ghostblog
+  namespace: ghostblog
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    acme.cert-manager.io/http01-edit-in-place: "true"
+spec:
+  rules:
+  - host: ghostblog.example.com
+    http:
+      paths:
+      - backend:
+          serviceName: ghostblog
+          servicePort: 80
+  - host: ghostblog.example.com
+    http:
+      paths:
+      - backend:
+          serviceName: ghostblog
+          servicePort: 443
+  tls:
+  - hosts:
+    - ghostblog.example.com
+    secretName: ghostblog-tls

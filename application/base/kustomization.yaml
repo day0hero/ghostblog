@@ -1,0 +1,10 @@
+commonLabels:
+  app: ghostblog
+
+resources:
+  - namespace.yaml
+  - deployment.yaml
+  - service.yaml
+  - ingress.yaml
+  - pvc.yaml
+  - clusterIssuer_prod.yaml

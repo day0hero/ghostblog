@@ -24,4 +24,5 @@ spec:
   tls:
   - hosts:
     - ghostblog.example.com
+
     secretName: ghostblog-tls
